@@ -1,57 +1,44 @@
-# Orders Handling Project
+---
 
-This project is designed to handle orders through a producer-consumer model. It consists of two main components: the producer, which creates and sends orders, and the consumer, which receives and processes those orders.
+# Nome do Projeto
 
-## Project Structure
+## Descrição do Projeto
+Desafio abbiamo de uma api em arquitetura orientada a eventos onde controlo ordem de compra de produto
+## Passos para Rodar o Projeto Localmente
+1. **Clone o repositório:**
+    ```bash
+    git clone https://github.com/HelioHD/desafio-abbiamo
+    ```
+2. **Navegue até o diretório do projeto:**
+    ```bash
+    cd seu-projeto
+    ```
+3. **Instale as dependências:**
+    ```bash
+    npm install
+    ```
+4. Rode o docker compose up -d 
+     ```bash
+    docker compose up -d
+    ```
+5. Baixe o mongodb e mongodb compass, use esse link:
+     ```bash
+    https://www.mongodb.com/try/download/community
+    ```
+6. **Inicie a aplicação:**
+    ```bash
+    npm start
+    ```
+7. **Abra o insomnia em:**
+    ```
+    POST http://localhost:3000/orders
+    ```
 
-```
-orders-handling-project
-├── src
-│   ├── producer
-│   │   └── index.ts
-│   ├── consumer
-│   │   └── index.ts
-│   └── types
-│       └── index.ts
-├── package.json
-├── tsconfig.json
-└── README.md
-```
+## Link do Deploy
+Infelizmente pela correria entre o trabalho atual com esse desafio não deu para ir a fundo para o deploy em produção
 
-## Components
+## Justificativa das Escolhas Técnicas
+### Mensageria
+Eu escolhi o kafka por conta da facilidade de experiências anteriores.
 
-### Producer
-
-- **OrderProducer**: A class responsible for creating and sending orders.
-  - `createOrder()`: Generates a new order.
-  - `sendOrder()`: Sends the order to a message queue or service.
-
-### Consumer
-
-- **OrderConsumer**: A class responsible for receiving and processing orders.
-  - `receiveOrder()`: Listens for incoming orders.
-  - `processOrder()`: Processes the received order.
-
-### Types
-
-- **Order**: An interface that defines the structure of an order object, including:
-  - `id`: Unique identifier for the order.
-  - `product`: The product being ordered.
-  - `quantity`: The quantity of the product.
-  - `status`: The current status of the order.
-
-## Installation
-
-To install the necessary dependencies, run:
-
-```
-npm install
-```
-
-## Usage
-
-To start the producer and consumer, you can run the respective scripts defined in the `package.json` file.
-
-## Contributing
-
-Feel free to submit issues or pull requests to improve the project.
+---
